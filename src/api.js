@@ -12,7 +12,7 @@ class JoblyApi {
   /** General GET method */
   static async request(endpoint, data = {}, method = "get") {
     console.debug("API Call:", endpoint, data, method);
-    const url = `${BASE_URL}/${endpoint}`;
+    const url = `${BASE_URL}${endpoint}`;
     const headers = { Authorization: `Bearer ${localStorage.token}` };
     const params = method === "get" ? data : {};
 
@@ -29,7 +29,7 @@ class JoblyApi {
   static async add(endpoint, data = {}, method = "post") {
     console.debug("API Call:", endpoint, data, method);
 
-    const url = `${BASE_URL}/${endpoint}`;
+    const url = `${BASE_URL}${endpoint}`;
     const headers = { Authorization: `Bearer ${localStorage.token}` };
     const params = method === "post" ? data : {};
 
@@ -46,7 +46,7 @@ class JoblyApi {
   static async edit(endpoint, data = {}, method = "patch") {
     console.debug("API Call:", endpoint, data, method);
 
-    const url = `${BASE_URL}/${endpoint}`;
+    const url = `${BASE_URL}${endpoint}`;
     const headers = { Authorization: `Bearer ${localStorage.token}` };
     const params = method === "patch" ? data : {};
 
